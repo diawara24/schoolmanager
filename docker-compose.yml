@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  school-manager-frond:
+    container_name: school-manager-frond
+    build: ./
+    volumes:
+    - './:/usr/src/app'
+    ports:
+      - "4200:4200"
+    command: >
+      bash -c "npm start"
+  # doker-nginx:
+  #   container_name: docker-nginx
+  #   build: ./
+  #   ports:
+  #     - "80:80"
+  #   command: ["nginx", "-g", "daemon off;"]
+  #   links:
+  #     - schoolmanager-frond
+
+  
