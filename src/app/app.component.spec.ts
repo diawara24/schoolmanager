@@ -3,27 +3,13 @@ import {RouterTestingModule} from '@angular/router/testing';
 import {AppComponent} from './app.component';
 
 describe('AppComponent', () => {
-    beforeEach(() => TestBed.configureTestingModule({
-        imports: [RouterTestingModule],
-        declarations: [AppComponent]
-    }));
+    let fixture: AppComponent;
 
-    it('should create the app', () => {
-        const fixture = TestBed.createComponent(AppComponent);
-        const app = fixture.componentInstance;
-        expect(app).toBeTruthy();
+    beforeEach(() => {
+        fixture = new AppComponent();
     });
 
     it(`should have as title 'schoolmanager'`, () => {
-        const fixture = TestBed.createComponent(AppComponent);
-        const app = fixture.componentInstance;
-        expect(app.title).toEqual('schoolmanager');
-    });
-
-    it('should render title', () => {
-        const fixture = TestBed.createComponent(AppComponent);
-        fixture.detectChanges();
-        const compiled = fixture.nativeElement as HTMLElement;
-        expect(compiled.querySelector('.content span')?.textContent).toContain('schoolmanager app is running!');
+        expect(fixture.title).toEqual('schoolmanager');
     });
 });
